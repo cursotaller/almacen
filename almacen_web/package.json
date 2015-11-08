@@ -1,0 +1,19 @@
+{
+  "name": "almacen_web",
+  "version": "1.0.0",
+  "description": "ejemplo",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "angular": "^1.4.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "runserver"
+  },
+  "keywords": [
+    "angular",
+    "material"
+  ],
+  "author": "capacitacion",
+  "license": "ISC"
+}
