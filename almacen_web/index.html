@@ -7,17 +7,21 @@
 Hola Angular <br>
 	<div ng-controller="ctll">
 nombre: <input type="text" ng-model="nombre"><br> {{ nombre }}
+<button ng-click="saludo()">Saludar</button>
 	</div>
 
 <script src="node_modules/angular/angular.js"></script>
 <script type="text/javascript">
 	angular.module("app",[
 	])
-
 	.controller("ctll", function ($scope) {
-		// body...
 		$scope.nombre="Miguel";
+
+		$scope.saludo = function  () {
+			console.log("Hola "+$scope.nombre);
+		}
 	});
+
 
 
 </script>
