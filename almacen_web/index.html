@@ -1,13 +1,25 @@
-<html>
+<!doctype html>
+<html ng-app="app">
 <head>
 	<title></title>
-
-
 </head>
 <body>
-Hola HTML
+Hola Angular <br>
+	<div ng-controller="ctll">
+nombre: <input type="text" ng-model="nombre"><br> {{ nombre }}
+	</div>
+
+<script src="node_modules/angular/angular.js"></script>
+<script type="text/javascript">
+	angular.module("app",[
+	])
+
+	.controller("ctll", function ($scope) {
+		// body...
+		$scope.nombre="Miguel";
+	});
 
 
-	<script src="node_modules/angular/angular.js"></script>
+</script>
 </body>
 </html>
