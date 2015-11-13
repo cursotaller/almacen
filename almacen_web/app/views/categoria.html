@@ -7,7 +7,7 @@ nombre: <input type="text" ng-model="categoria.nombre"><br>
 <button type="submit" ng-click="save()">Save</button>
 
 <table>
-<tr ng-repeat="d in list | filter:nombre ">
+<tr ng-repeat="d in d_list | filter:nombre ">
 	<td>
 		{{ d.codigo}}
 	</td>

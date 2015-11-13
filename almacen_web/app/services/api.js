@@ -1,6 +1,17 @@
 app
+.factory("API", function($resource ) {
+	var url="http://localhost:8000/";
+    return {
+        Categoria:  $resource(url+'productos/categorias/:id/', {'id': '@id'},
+        {
+            'update': { method:'PUT' },
+            'list': { method:'GET', isArray : true, params: {} },
+        })
 
-.factory("Categoria",function function_name ($http) {
+    };
+})
+
+.factory("CategoriaXXX",function function_name ($http) {
 	var url="http://localhost:8000/productos/categorias/";
 	return {
 		"list": function () {

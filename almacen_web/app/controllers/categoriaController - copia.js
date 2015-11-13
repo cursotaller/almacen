@@ -1,12 +1,12 @@
 app
 
 .controller("categoriaController", function ($scope, API) {
-		$scope.d_list=[];
+		$scope.list=[];
 
 		$scope.listar = function  () {
 
-			API.Categoria.list().$promise.then(function (r) {
-				$scope.d_list=r;
+			API.Categoria.list().then(function (r) {
+				$scope.list=r.data;
 			}, function (err) {
 				console.log("Error: " + err);
 			});
@@ -20,15 +20,15 @@ app
 
 		$scope.save = function  () {
 			if($scope.categoria.id){
-				API.Categoria.update({ id: $scope.categoria.id }, $scope.categoria).$promise.then(function (r) {
-					console.log("update "+r);
+				API.Categoria.update({ id: "" }, $scope.categoria).then(function (r) {
+					console.log("update "+r.data);
 					$scope.listar();
 				}, function (err) {
 					console.log("Error: " + err);
 				});
 			}else{
-				API.Categoria.save($scope.categoria).$promise.then(function (r) {
-					console.log(r);
+				API.Categoria.create($scope.categoria).then(function (r) {
+					console.log(r.data);
 					$scope.listar();
 				}, function (err) {
 					console.log("Error: " + err);
@@ -38,8 +38,8 @@ app
 
 		$scope.delete = function  (d) {
 
-			API.Categoria.delete({ id: d.id }).$promise.then(function (r) {
-				console.log(r);
+			API.Categoria.delete({ id: d.id }).then(function (r) {
+				console.log(r.data);
 				$scope.listar();
 			}, function (err) {
 				console.log("Error: " + err);
