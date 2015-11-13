@@ -20,7 +20,7 @@ app
 
 		$scope.save = function  () {
 			if($scope.categoria.id){
-				Categoria.update($scope.categoria).then(function (r) {
+				Categoria.update({ id: "" }, $scope.categoria).then(function (r) {
 					console.log("update "+r.data);
 					$scope.listar();
 				}, function (err) {
@@ -38,7 +38,7 @@ app
 
 		$scope.delete = function  (d) {
 
-			Categoria.delete(d).then(function (r) {
+			Categoria.delete({ id: d.id }).then(function (r) {
 				console.log(r.data);
 				$scope.listar();
 			}, function (err) {

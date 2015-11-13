@@ -14,7 +14,7 @@ app
 			});
 		},
 		"get":"list",
-		"update":function (d) {
+		"update":function (id, d) {
 			return $http({
 				method:"PUT",
 				data: d,
