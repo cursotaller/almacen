@@ -20,12 +20,6 @@ app
 					        "activo": false,
 					        "fecha": null
 					    },
-					    {
-					        "id": 4,
-					        "codigo": "Electro",
-					        "nombre": "Electrodomesticos",
-					        "activo": false,
-					        "fecha": null
-					    }
+					    
 					]
 	});

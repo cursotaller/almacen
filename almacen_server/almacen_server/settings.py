@@ -40,6 +40,7 @@ INSTALLED_APPS = (
 
     'rest_framework',
     'oauth2_provider',
+    'corsheaders',
 
 
     'productos',
@@ -55,6 +56,8 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
+
+    'corsheaders.middleware.CorsMiddleware',
 )
 
 ROOT_URLCONF = 'almacen_server.urls'
@@ -114,3 +117,5 @@ REST_FRAMEWORK = {
         'oauth2_provider.ext.rest_framework.OAuth2Authentication',
     )
 }
+
+CORS_ORIGIN_ALLOW_ALL = True
