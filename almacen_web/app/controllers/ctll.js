@@ -8,15 +8,15 @@ app
 		$scope.list=[
 					    {
 					        "id": 2,
-					        "codigo": "02",
-					        "nombre": "Laptop",
+					        "codigo": "x",
+					        "nombre": "xx",
 					        "activo": true,
 					        "fecha": "2015-11-08T15:31:08Z"
 					    },
 					    {
 					        "id": 3,
-					        "codigo": "Electro",
-					        "nombre": "Electrodomesticos",
+					        "codigo": "www",
+					        "nombre": "x",
 					        "activo": false,
 					        "fecha": null
 					    },

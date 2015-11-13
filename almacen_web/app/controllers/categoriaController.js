@@ -3,7 +3,7 @@ app
 .controller("categoriaController", function ($scope, Categoria) {
 		$scope.list=[];
 
-		$scope.list = function  () {
+		$scope.listar = function  () {
 
 			Categoria.list().then(function (r) {
 				$scope.list=r.data;
@@ -11,5 +11,42 @@ app
 				console.log("Error: " + err);
 			});
 		};
-		$scope.list();
+		$scope.listar();
+
+		$scope.get = function  (d) {
+
+			$scope.categoria = d;
+		};
+
+		$scope.save = function  () {
+			if($scope.categoria.id){
+				Categoria.update($scope.categoria).then(function (r) {
+					console.log("update "+r.data);
+					$scope.listar();
+				}, function (err) {
+					console.log("Error: " + err);
+				});
+			}else{
+				Categoria.create($scope.categoria).then(function (r) {
+					console.log(r.data);
+					$scope.listar();
+				}, function (err) {
+					console.log("Error: " + err);
+				});
+			}
+		};
+
+		$scope.delete = function  (d) {
+
+			Categoria.delete(d).then(function (r) {
+				console.log(r.data);
+				$scope.listar();
+			}, function (err) {
+				console.log("Error: " + err);
+			});
+		};
+
+
+
+
 		});
