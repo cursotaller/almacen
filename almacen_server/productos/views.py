@@ -32,6 +32,6 @@ from rest_framework import permissions
 
 
 class CategoriaViewSet(viewsets.ModelViewSet):  # get post put delete
-    permission_classes = [permissions.IsAuthenticated]
+    #permission_classes = [permissions.IsAuthenticated]
     queryset = Categoria.objects.all()
     serializer_class = CategoriaSerializer

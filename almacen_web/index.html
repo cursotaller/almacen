@@ -6,7 +6,18 @@
 <body>
 Hola Angular <br>
 	<div ng-controller="ctll">
-nombre: <input type="text" ng-model="nombre"><br> {{ nombre }}
+nombre: <input type="text" ng-model="nombre"><br>
+<table>
+<tr ng-repeat="d in list | filter:nombre ">
+	<td>
+		{{ d.codigo}}
+	</td>
+	<td>
+		{{ d.nombre}}
+	</td>
+</tr>
+</table>
+
 <button ng-click="saludo()">Saludar</button>
 	</div>
 
@@ -15,15 +26,34 @@ nombre: <input type="text" ng-model="nombre"><br> {{ nombre }}
 	angular.module("app",[
 	])
 	.controller("ctll", function ($scope) {
-		$scope.nombre="Miguel";
-
+		//$scope.nombre="Miguel";
 		$scope.saludo = function  () {
 			console.log("Hola "+$scope.nombre);
 		}
+		$scope.list=[
+					    {
+					        "id": 2,
+					        "codigo": "02",
+					        "nombre": "Laptop",
+					        "activo": true,
+					        "fecha": "2015-11-08T15:31:08Z"
+					    },
+					    {
+					        "id": 3,
+					        "codigo": "Electro",
+					        "nombre": "Electrodomesticos",
+					        "activo": false,
+					        "fecha": null
+					    },
+					    {
+					        "id": 4,
+					        "codigo": "Electro",
+					        "nombre": "Electrodomesticos",
+					        "activo": false,
+					        "fecha": null
+					    }
+					]
 	});
-
-
-
 </script>
 </body>
 </html>
